@@ -1,0 +1,14 @@
+{
+  "app": {
+    "name": "service-a",
+    "host": "0.0.0.0",
+    "port": 4001,
+    "register_address": "service-a",
+    "health_check_address": "service-a"
+  },
+  "consul": {
+    "host": "consul",
+    "port": 8500,
+    "scheme": "http"
+  }
+}
