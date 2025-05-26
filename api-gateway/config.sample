@@ -1,0 +1,12 @@
+{
+  "app": {
+    "name": "api-gateway",
+    "host": "0.0.0.0",
+    "port": 4000
+  },
+  "consul": {
+    "host": "localhost",
+    "port": 8500,
+    "scheme": "http"
+  }
+}
