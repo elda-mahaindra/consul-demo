@@ -1,0 +1,77 @@
+services:
+  consul:
+    image: hashicorp/consul:latest
+    container_name: consul
+    ports:
+      - "8500:8500"
+    command: "agent -server -bootstrap-expect=1 -ui -client 0.0.0.0 -data-dir=/consul/data"
+    volumes:
+      - consul-data:/consul/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - consul-demo
+
+  service-a:
+    build: ./service-a
+    image: service-a
+    container_name: service-a
+    restart: unless-stopped
+    ports:
+      - "4001:4001"
+    volumes:
+      - ./service-a/config.json:/app/config.json
+    depends_on:
+      - consul
+    networks:
+      - consul-demo
+
+  service-b:
+    build: ./service-b
+    image: service-b
+    container_name: service-b
+    restart: unless-stopped
+    ports:
+      - "4002:4002"
+    volumes:
+      - ./service-b/config.json:/app/config.json
+    depends_on:
+      - consul
+    networks:
+      - consul-demo
+
+  service-a2:
+    build: ./service-a2
+    image: service-a2
+    container_name: service-a2
+    restart: unless-stopped
+    ports:
+      - "4003:4003"
+    volumes:
+      - ./service-a2/config.json:/app/config.json
+    depends_on:
+      - consul
+    networks:
+      - consul-demo
+
+  api-gateway:
+    build: ./api-gateway
+    image: api-gateway
+    container_name: api-gateway
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./api-gateway/config.json:/app/config.json
+    depends_on:
+      - consul
+    networks:
+      - consul-demo
+
+volumes:
+  consul-data:
+
+networks:
+  consul-demo:
+    driver: bridge
+    name: consul-demo
