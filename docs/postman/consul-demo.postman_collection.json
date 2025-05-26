@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "07b943c3-666f-4ed3-aec5-5e8177398726",
+		"name": "consul-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30554957"
+	},
+	"item": [
+		{
+			"name": "discover services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/discovery/services",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"discovery",
+						"services"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/discovery/services",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"discovery",
+								"services"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 03:18:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 2,\n    \"message\": \"Available services in Consul registry\",\n    \"services\": {\n        \"consul\": [],\n        \"service-a\": [\n            \"api\",\n            \"rest\",\n            \"microservice\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/discovery/services",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"discovery",
+								"services"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 03:45:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "170"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 3,\n    \"message\": \"Available services in Consul registry\",\n    \"services\": {\n        \"consul\": [],\n        \"service-a\": [\n            \"api\",\n            \"rest\",\n            \"microservice\"\n        ],\n        \"service-b\": [\n            \"rest\",\n            \"microservice\",\n            \"api\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ping all services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/discovery/ping-all",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"discovery",
+						"ping-all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/discovery/ping-all",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"discovery",
+								"ping-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 03:29:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "436"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1,\n    \"message\": \"Ping results for all discovered services\",\n    \"results\": {\n        \"service-a\": {\n            \"service\": \"service-a\",\n            \"message\": \"Successfully pinged service-a\",\n            \"instance\": {\n                \"ID\": \"service-a-localhost-4001\",\n                \"Name\": \"service-a\",\n                \"Address\": \"localhost\",\n                \"Port\": 4001,\n                \"Tags\": [\n                    \"api\",\n                    \"rest\",\n                    \"microservice\"\n                ],\n                \"Meta\": {\n                    \"environment\": \"development\",\n                    \"protocol\": \"http\",\n                    \"version\": \"1.0.0\"\n                }\n            },\n            \"status_code\": 200,\n            \"raw_response\": {\n                \"message\": \"pong\",\n                \"service\": \"service-a\"\n            }\n        }\n    }\n}"
+				},
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/discovery/ping-all",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"discovery",
+								"ping-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 03:45:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "796"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 2,\n    \"message\": \"Ping results for all discovered services\",\n    \"results\": {\n        \"service-a\": {\n            \"service\": \"service-a\",\n            \"message\": \"Successfully pinged service-a\",\n            \"instance\": {\n                \"ID\": \"service-a-service-a-4001\",\n                \"Name\": \"service-a\",\n                \"Address\": \"service-a\",\n                \"Port\": 4001,\n                \"Tags\": [\n                    \"api\",\n                    \"rest\",\n                    \"microservice\"\n                ],\n                \"Meta\": {\n                    \"environment\": \"development\",\n                    \"protocol\": \"http\",\n                    \"version\": \"1.0.0\"\n                }\n            },\n            \"status_code\": 200,\n            \"raw_response\": {\n                \"message\": \"pong\",\n                \"service\": \"service-a\"\n            }\n        },\n        \"service-b\": {\n            \"service\": \"service-b\",\n            \"message\": \"Successfully pinged service-b\",\n            \"instance\": {\n                \"ID\": \"service-b-service-b-4002\",\n                \"Name\": \"service-b\",\n                \"Address\": \"service-b\",\n                \"Port\": 4002,\n                \"Tags\": [\n                    \"api\",\n                    \"rest\",\n                    \"microservice\"\n                ],\n                \"Meta\": {\n                    \"environment\": \"development\",\n                    \"protocol\": \"http\",\n                    \"version\": \"1.0.0\"\n                }\n            },\n            \"status_code\": 200,\n            \"raw_response\": {\n                \"message\": \"pong\",\n                \"service\": \"service-b\"\n            }\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ping service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/api/ping/service-a",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"ping",
+						"service-a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/api/ping/service-a",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"ping",
+								"service-a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 03:31:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "347"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": \"service-a\",\n    \"message\": \"Successfully pinged service-a\",\n    \"instance\": {\n        \"ID\": \"service-a-localhost-4001\",\n        \"Name\": \"service-a\",\n        \"Address\": \"localhost\",\n        \"Port\": 4001,\n        \"Tags\": [\n            \"api\",\n            \"rest\",\n            \"microservice\"\n        ],\n        \"Meta\": {\n            \"environment\": \"development\",\n            \"protocol\": \"http\",\n            \"version\": \"1.0.0\"\n        }\n    },\n    \"status_code\": 200,\n    \"raw_response\": {\n        \"message\": \"pong\",\n        \"service\": \"service-a\"\n    }\n}"
+				},
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/api/ping/service-b",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"ping",
+								"service-b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 03:45:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "347"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": \"service-b\",\n    \"message\": \"Successfully pinged service-b\",\n    \"instance\": {\n        \"ID\": \"service-b-service-b-4002\",\n        \"Name\": \"service-b\",\n        \"Address\": \"service-b\",\n        \"Port\": 4002,\n        \"Tags\": [\n            \"api\",\n            \"rest\",\n            \"microservice\"\n        ],\n        \"Meta\": {\n            \"environment\": \"development\",\n            \"protocol\": \"http\",\n            \"version\": \"1.0.0\"\n        }\n    },\n    \"status_code\": 200,\n    \"raw_response\": {\n        \"message\": \"pong\",\n        \"service\": \"service-b\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "port",
+			"value": "4000",
+			"type": "default"
+		}
+	]
+}
