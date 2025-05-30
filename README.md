@@ -607,8 +607,8 @@ done
 
 ## License
 
-This project is for educational purposes. Feel free to use it as a reference for implementing Consul in your own applications.
+This project is for educational purposes. Feel free to use it as a reference for implementing Consul service discovery in your own microservices applications.
 
 ---
 
-_Built with ❤️ to help developers understand distributed tracing with Consul_
+_Built with ❤️ to help developers understand service discovery and dynamic routing with Consul_
