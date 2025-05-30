@@ -604,3 +604,11 @@ for i in {1..10}; do
   echo "Request $i: $INSTANCE"
 done
 ```
+
+## License
+
+This project is for educational purposes. Feel free to use it as a reference for implementing Consul in your own applications.
+
+---
+
+_Built with ❤️ to help developers understand distributed tracing with Consul_
